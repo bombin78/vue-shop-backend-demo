@@ -12,7 +12,10 @@ header('Content-type:application/json;charset=utf-8');
 $data = file_get_contents("php://input");
 
 if (!$data) {
-    die("Get out of here!");
+    die(json_encode([
+        "hasError" => true,
+        "message" => "Get out of here!",
+    ]));
 }
 
 $order = json_decode($data);
@@ -55,20 +58,19 @@ if ($name != "" && $phone != "" && $cart !== "") {
         $mail->Body = $text;
         $mail->send();
 
-        echo json_encode([
+        die(json_encode([
             "hasError" => false,
             "message" => "Заказ успешно оформлен",
-        ]);
+        ]));
     } catch (\Exception $e) {
-        echo json_encode([
+        die(json_encode([
             "hasError" => true,
             "message" => "Произошла ошибка, попробуйте ещё раз!",
-        ]);
+        ]));
     }
-
 } else {
-    echo json_encode([
+    die(json_encode([
         "hasError" => true,
         "message" => "Заполните все поля",
-    ]);
+    ]));
 }
