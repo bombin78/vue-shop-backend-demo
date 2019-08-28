@@ -25,7 +25,7 @@ $order = json_decode($data);
 
 $to = "bombin78@mail.ru";
 
-$name = strip_tags($order->name]);
+$name = strip_tags($order->name);
 $phone = strip_tags($order->phone);
 $cart = nl2br(strip_tags($order->cart));
 $date = date("d.m.Y в H:i");
