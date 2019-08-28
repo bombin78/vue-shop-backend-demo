@@ -9,7 +9,7 @@ require "./PHPMailer/SMTP.php";
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS");
-header("Access-Control-Allow-HEADERS: Content-type");
+header("Access-Control-Allow-Headers: Content-Type");
 
 header('Content-type:application/json;charset=utf-8');
 $data = file_get_contents("php://input");
@@ -25,9 +25,9 @@ $order = json_decode($data);
 
 $to = "bombin78@mail.ru";
 
-$name = strip_tags($order["name"]);
-$phone = strip_tags($order["phone"]);
-$cart = nl2br(strip_tags($order["cart"]));
+$name = strip_tags($order->name]);
+$phone = strip_tags($order->phone);
+$cart = nl2br(strip_tags($order->cart));
 $date = date("d.m.Y в H:i");
 
 if ($name != "" && $phone != "" && $cart !== "") {
