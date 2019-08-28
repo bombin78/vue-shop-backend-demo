@@ -19,13 +19,9 @@ $order = json_decode($data);
 
 $to = "uragorin@yandex.ru";
 
-//$name = strip_tags($order["name"]);
-//$phone = strip_tags($order["phone"]);
-//$cart = nl2br(strip_tags($order["cart"]));
-
-$name = "test";
-$phone = 123123123;
-$cart = "....";
+$name = strip_tags($order["name"]);
+$phone = strip_tags($order["phone"]);
+$cart = nl2br(strip_tags($order["cart"]));
 $date = date("d.m.Y в H:i");
 
 if ($name != "" && $phone != "" && $cart !== "") {
