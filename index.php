@@ -20,7 +20,7 @@ if (!$data) {
 
 $order = json_decode($data);
 
-$to = "uragorin@yandex.ru";
+$to = "bombin78@mail.ru";
 
 $name = strip_tags($order["name"]);
 $phone = strip_tags($order["phone"]);
@@ -35,7 +35,7 @@ if ($name != "" && $phone != "" && $cart !== "") {
             <b>Имя:</b><br /> {$name}<br />
             <b>Телефон:</b><br /> {$phone}<br />
         </p>
-        <p>Содержание заказа:</p> 
+        <p>Содержание заказа:</p>
         {$cart}
         <p><i>Заявка сформирована {$date}</i></p>
     ";
