@@ -8,6 +8,9 @@ require "./PHPMailer/PHPMailer.php";
 require "./PHPMailer/SMTP.php";
 
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS");
+header("Access-Control-Allow-HEADERS: Content-type");
+
 header('Content-type:application/json;charset=utf-8');
 $data = file_get_contents("php://input");
 
